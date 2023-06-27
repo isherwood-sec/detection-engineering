@@ -13,6 +13,7 @@ jobs:
           python-version: 'pypy3.11.4' 
       - run: sudo apt-get install python3.11
       - run: pip3 install python-dateutil 
+      - run: python3 --version
       - run: python3 development/toml_to_report.py
       - run: |
           git config user.name github-actions
