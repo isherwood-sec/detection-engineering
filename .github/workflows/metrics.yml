@@ -8,9 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_KEY }}
       - uses: actions/setup-python@v4 
         with:
-          python-version: '3.11.4' 
+          python-version: '3.11.4'
       - run: sudo apt-get install python3.11
       - run: pip3 install python-dateutil 
       - run: python3 --version
