@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: sudo apt-get install python3.11
       - run: pip3 install python-dateutil 
       - run: python3 development/toml_to_report.py
       - run: |
