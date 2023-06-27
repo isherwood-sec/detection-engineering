@@ -14,7 +14,7 @@ current_month = str(today).split("-")[0] + "-" + str(today).split("-")[1]
 one_month_ago = str(today - relativedelta(months=1)).split("-")[0] + "-" + str(today - relativedelta(months=1)).split("-")[1]
 two_month_ago = str(today - relativedelta(months=1)).split("-")[0] + "-" + str(today - relativedelta(months=2)).split("-")[1]
 
-for root, dirs, files in os.walk("I:\Google Drive\TCM\Python\github\custom_alerts"):
+for root, dirs, files in os.walk("custom_alerts"):
     for file in files:
         data = "{\n"
         if file.endswith(".toml"):
@@ -63,7 +63,7 @@ for root, dirs, files in os.walk("I:\Google Drive\TCM\Python\github\custom_alert
                 elif date_compare == two_month_ago:
                     two_months[file] = obj
 
-output_path = "I:\Google Drive\TCM\Python\metrics\\latestdetections.md"
+output_path = "metrics\latestdetections.md"
 separator = "; "
 
 outF = open(output_path, "w")
