@@ -1,0 +1,24 @@
+[rule]
+author = ["Anthony Isherwood"]
+description = "This alert looks for zip files being sent over FTP."
+from = "now-6m"
+name = "TESTING ALERT SYNCING"
+risk_score = 50
+severity = "high"
+type = "query"
+rule_id = "00000000-0000-0000-0000-000000000150"
+query = '''
+event.dataset : zeek.ftp and event.action : STOR and zeek.ftp.arg : *.zip
+'''
+
+[[rule.threat]]
+framework = "MITRE ATT&CK"
+[[rule.threat.technique]]
+id = "T1020"
+name = "Automated Exfiltration"
+reference = "https://attack.mitre.org/techniques/T1020/"
+
+[rule.threat.tactic]
+id = "TA0009"
+name = "Exfiltration"
+reference = "https://attack.mitre.org/tactics/TA0010/"
