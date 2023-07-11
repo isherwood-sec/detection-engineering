@@ -1,0 +1,15 @@
+name: TOML Validation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3 
+      - name: Run validation scripts
+        run: 
+          python development/validation.py
+          python development/mitre.py
