@@ -55,7 +55,9 @@ for root, dirs, files in os.walk("detections/"):
             elastic_data = requests.put(update_url, headers=headers, data=data)
             print(elastic_data)
 
-            if "404" == elastic_data.status_code:
-                elastic_data = requests.post(url, headers=headers, data=data).json()
-                print(elastic_data)
+            for key in elastic_data:
+                if key == "status_code":
+                    if 404 == elastic_data["status_code"]:
+                        elastic_data = requests.post(url, headers=headers, data=data).json()
+                        print(elastic_data)
 
