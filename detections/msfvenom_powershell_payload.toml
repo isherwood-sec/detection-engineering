@@ -1,3 +1,6 @@
+[metadata]
+creation_date = "2023/07/11"
+
 [rule]
 author = ["Anthony Isherwood"]
 description = "This alert triggers via sysmon data on a string of text that occurs out of the box with msfvenom."

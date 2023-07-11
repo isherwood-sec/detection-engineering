@@ -1,3 +1,6 @@
+[metadata]
+creation_date = "2023/07/11"
+
 [rule]
 author = ["Anthony Isherwood"]
 description = """This alert looks for .zip files being created in a file path containing Windows\\Temp."""

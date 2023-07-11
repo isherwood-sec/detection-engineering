@@ -1,9 +1,12 @@
+[metadata]
+creation_date = "2023/07/11"
+
 [rule]
 author = ["Anthony Isherwood"]
 description = "This alert looks for both specific files and file extensions written to a file path containing Windows\\Temp\\."
 from = "now-6m"
 name = "Suspicious File Written to Temp Directory"
-risk_score = 50
+risk_score = 75
 severity = "high"
 type = "query"
 rule_id = "00000000-0000-0000-0000-000000000009"

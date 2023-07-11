@@ -1,3 +1,6 @@
+[metadata]
+creation_date = "2023/07/11"
+
 [rule]
 author = ["Anthony Isherwood"]
 description = "Using sysmon data, we're triggering on PowerShell logs where Invoke-WebRequest and .bat strings are observed."

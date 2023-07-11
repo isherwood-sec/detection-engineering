@@ -1,9 +1,12 @@
+[metadata]
+creation_date = "2023/07/11"
+
 [rule]
 author = ["Anthony Isherwood"]
 description = "This alert looks for .ps1 files added to autorun on bootup locations in the Windows Registry."
 from = "now-6m"
 name = "Suspicious File Added to Registry"
-risk_score = 50
+risk_score = 75
 severity = "high"
 type = "query"
 rule_id = "00000000-0000-0000-0000-000000000008"

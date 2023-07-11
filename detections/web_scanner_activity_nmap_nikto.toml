@@ -1,9 +1,12 @@
+[metadata]
+creation_date = "2023/07/11"
+
 [rule]
 author = ["Anthony Isherwood"]
 description = "Detects Nmap and Nikto User Agent strings."
 from = "now-6m"
 name = "Web Scanner Activity - Nmap and Nikto"
-risk_score = 45
+risk_score = 25
 severity = "low"
 type = "query"
 rule_id = "00000000-0000-0000-0000-000000000010"
