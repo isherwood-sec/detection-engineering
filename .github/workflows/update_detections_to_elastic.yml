@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
+          fetch-depth: 2
           files: |
             *.toml
 
@@ -24,7 +24,3 @@ jobs:
       - name: Verify the contents of the .github/outputs/added_files.json file
         run: |
           cat .github/outputs/added_files.json
-
-      - name: check script accessibility
-        run: |
-          python development/update_alert.py
