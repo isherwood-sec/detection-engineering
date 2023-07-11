@@ -6,10 +6,6 @@ on:
 jobs:
   elastic-detections-update:
     runs-on: ubuntu-latest
-    env:
-      ELASTIC_KEY: ${{ secrets.ELASTIC_KEY }}
-    steps:
-     - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: echo "$GITHUB_CONTEXT"
