@@ -3,7 +3,7 @@ name: TOML/MITRE Validation
 on:
   push:
     path:
-      - '**.toml'
+      - 'detections/**.toml'
   workflow_dispatch:
 
 jobs:
