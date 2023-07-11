@@ -14,8 +14,8 @@ print(changed_files)
 data = ""
 for root, dirs, files in os.walk("detections/"):
     for file in files:
-        print(file)
         if file in changed_files:
+            print(file)
             data = "{\n"
             if file.endswith(".toml"):
                 full_path = os.path.join(root, file)
@@ -51,5 +51,5 @@ for root, dirs, files in os.walk("detections/"):
             rule_id = alert['rule']['rule_id']
             url = url + "?rule_id=" + rule_id
       
-        elastic_data = requests.put(url, headers=headers, data=data).json()
-        print(elastic_data)
+            elastic_data = requests.put(url, headers=headers, data=data).json()
+            print(elastic_data)
