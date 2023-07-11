@@ -3,7 +3,7 @@ author = ["Anthony Isherwood"]
 description = """This alert looks for .zip files being created in a file path containing Windows\\Temp."""
 from = "now-6m"
 name = "Data Archive for Potential Exfil"
-
+risk_score = 50
 severity = "medium"
 type = "query"
 rule_id = "00000000-0000-0000-0000-000000000002"
