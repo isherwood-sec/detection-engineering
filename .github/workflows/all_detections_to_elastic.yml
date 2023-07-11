@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  toml-validation:
+  elastic-all-detections:
     runs-on: ubuntu-latest
     env:
       ELASTIC_KEY: ${{ secrets.ELASTIC_KEY }}
