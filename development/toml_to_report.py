@@ -70,6 +70,10 @@ outF = open(output_path, "w")
 outF.write("# Detection Report\n")
 
 # Current Month
+outF.write("## Current Month\n")
+outF.write("### New Alerts\n\n")
+outF.write("| Alert | Date | Author | Risk Score | Severity |\n")
+outF.write("| --- | --- | --- | --- | --- |\n")
 for line in current.values():
     tactic = []
     tech = []
@@ -85,14 +89,13 @@ for line in current.values():
         tactic.append(technique['tactic'])
         tech.append(technique['technique'])
         subtechnique.append(technique['subtech'])
-
-    outF.write("## Current Month\n")
-    outF.write("### New Alerts\n\n")
-    outF.write("| Alert | Date | Author | Risk Score | Severity |\n")
-    outF.write("| --- | --- | --- | --- | --- |\n")
     outF.write("|" + name + "|" + date + "|" + author + "|" + risk_score  + "|" + severity + "|\n")
 
 # Two Months Ago
+outF.write("## Last Month\n")
+outF.write("### Alerts\n\n")
+outF.write("| Alert | Date | Author | Risk Score | Severity |\n")
+outF.write("| --- | --- | --- | --- | --- |\n")
 for line in one_month.values():
     tactic = []
     tech = []
@@ -108,14 +111,13 @@ for line in one_month.values():
         tactic.append(technique['tactic'])
         tech.append(technique['technique'])
         subtechnique.append(technique['subtech'])
-
-    outF.write("## Last Month\n")
-    outF.write("### Alerts\n\n")
-    outF.write("| Alert | Date | Author | Risk Score | Severity |\n")
-    outF.write("| --- | --- | --- | --- | --- |\n")
     outF.write("|" + name + "|" + date + "|" + author + "|" + risk_score  + "|" + severity + "|\n")
 
 # Two Months Ago
+outF.write("## Two Months Ago\n")
+outF.write("### Alerts\n\n")
+outF.write("| Alert | Date | Author | Risk Score | Severity |\n")
+outF.write("| --- | --- | --- | --- | --- |\n")
 for line in two_months.values():
     tactic = []
     tech = []
@@ -131,11 +133,6 @@ for line in two_months.values():
         tactic.append(technique['tactic'])
         tech.append(technique['technique'])
         subtechnique.append(technique['subtech'])
-
-    outF.write("## Two Months Ago\n")
-    outF.write("### Alerts\n\n")
-    outF.write("| Alert | Date | Author | Risk Score | Severity |\n")
-    outF.write("| --- | --- | --- | --- | --- |\n")
     outF.write("|" + name + "|" + date + "|" + author + "|" + risk_score  + "|" + severity + "|\n")
 
 outF.close()
