@@ -1,10 +1,11 @@
 name: All Detections To Elastic
 
 on:
+  push:
   workflow_dispatch:
 
 jobs:
-  elastic-detections-all:
+  toml-validation:
     runs-on: ubuntu-latest
     env:
       ELASTIC_KEY: ${{ secrets.ELASTIC_KEY }}
