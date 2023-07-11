@@ -1,0 +1,26 @@
+name: Metrics
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_KEY }}
+      - uses: actions/setup-python@v4 
+        with:
+          python-version: '3.11.4'
+      - run: sudo apt-get install python3.11
+      - run: pip3 install python-dateutil 
+      - run: python3 --version
+      - run: python3 development/toml_to_report.py
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Updating Metrics"
+          git push -f
+      
