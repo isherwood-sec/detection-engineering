@@ -6,7 +6,7 @@ name = "New Alert"
 risk_score = 80
 severity = "medium"
 type = "query"
-rule_id = "00000000-0000-0000-0000-000000000006"
+rule_id = "00000000-0000-0000-0000-000000000011"
 query = '''
 process.command_line : powershell* and process.parent.command_line : *bat* and process.parent.name: cmd.exe
 '''
