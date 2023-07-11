@@ -2,6 +2,8 @@ name: Metrics
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * FRI"
 
 jobs:
   metrics:
@@ -15,6 +17,8 @@ jobs:
           python-version: '3.11.4'
       - run: pip install python-dateutil 
       - run: python development/toml_to_report.py
+      - run: python development/toml_to_csv.py
+      - run: python development/toml_to_navigator.py
       - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
