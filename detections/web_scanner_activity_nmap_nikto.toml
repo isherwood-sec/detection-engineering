@@ -1,0 +1,24 @@
+[rule]
+author = ["Anthony Isherwood"]
+description = "Detects Nmap and Nikto User Agent strings."
+from = "now-6m"
+name = "Web Scanner Activity - Nmap and Nikto"
+risk_score = 25
+severity = "low"
+type = "query"
+rule_id = "00000000-0000-0000-0000-000000000010"
+query = '''
+event.dataset : zeek.http and user_agent.original: *Nmap* or user_agent.original: *Nikto*
+'''
+
+[[rule.threat]]
+framework = "MITRE ATT&CK"
+[[rule.threat.technique]]
+id = "T1046"
+name = "Network Service Discovery"
+reference = "https://attack.mitre.org/techniques/T1046/"
+
+[rule.threat.tactic]
+id = "TA0007"
+name = "Discovery"
+reference = "https://attack.mitre.org/tactics/TA0007/"

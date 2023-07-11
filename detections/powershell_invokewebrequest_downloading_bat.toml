@@ -1,0 +1,28 @@
+[rule]
+author = ["Anthony Isherwood"]
+description = "Using sysmon data, we're triggering on PowerShell logs where Invoke-WebRequest and .bat strings are observed."
+from = "now-6m"
+name = "PowerShell Invoke-WebRequest Downloading .BAT File"
+risk_score = 50
+severity = "medium"
+type = "query"
+rule_id = "00000000-0000-0000-0000-000000000007"
+query = '''
+process.command_line: *Invoke-WebRequest* and process.command_line:*bat*
+'''
+
+[[rule.threat]]
+framework = "MITRE ATT&CK"
+[[rule.threat.technique]]
+id = "T1059"
+name = "Command and Scripting Interpreter"
+reference = "https://attack.mitre.org/techniques/T1059/"
+[[rule.threat.technique.subtechnique]]
+id = "T1059.001"
+name = "PowerShell"
+reference = "https://attack.mitre.org/techniques/T1059/001/"
+
+[rule.threat.tactic]
+id = "TA0002"
+name = "Execution"
+reference = "https://attack.mitre.org/tactics/TA0002/"

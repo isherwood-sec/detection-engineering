@@ -1,0 +1,29 @@
+[rule]
+author = ["Anthony Isherwood"]
+description = """This alert looks for .zip files being created in a file path containing Windows\\Temp."""
+from = "now-6m"
+name = "Data Archive for Potential Exfil"
+risk_score = 50
+severity = "medium"
+type = "query"
+rule_id = "00000000-0000-0000-0000-000000000002"
+query = '''
+event.dataset : "endpoint.events.file" and event.action : (creation or overwrite) and process.name : "powershell.exe" and file.path : *Windows\\\\Temp\\\\* and file.name : *.zip
+'''
+
+[[rule.threat]]
+framework = "MITRE ATT&CK"
+[[rule.threat.technique]]
+id = "T1074"
+name = "Data Staged"
+reference = "https://attack.mitre.org/techniques/T1074/"
+[[rule.threat.technique.subtechnique]]
+id = "T1074.001"
+name = "Local Data Staging"
+reference = "https://attack.mitre.org/techniques/T1074/001/"
+
+
+[rule.threat.tactic]
+id = "TA0009"
+name = "Collection"
+reference = "https://attack.mitre.org/tactics/TA0009/"

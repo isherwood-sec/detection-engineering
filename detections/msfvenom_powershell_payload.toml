@@ -1,0 +1,28 @@
+[rule]
+author = ["Anthony Isherwood"]
+description = "This alert triggers via sysmon data on a string of text that occurs out of the box with msfvenom."
+from = "now-6m"
+name = "Potential MSF PowerShell Payload Observed"
+risk_score = 50
+severity = "high"
+type = "query"
+rule_id = "00000000-0000-0000-0000-000000000005"
+query = '''
+process.command_line: "\"cmd.exe\"" and message : "*powershell -w hidden -nop -c $a='*" 
+'''
+
+[[rule.threat]]
+framework = "MITRE ATT&CK"
+[[rule.threat.technique]]
+id = "T1059"
+name = "Command and Scripting Interpreter"
+reference = "https://attack.mitre.org/techniques/T1059/"
+[[rule.threat.technique.subtechnique]]
+id = "T1059.001"
+name = "PowerShell"
+reference = "https://attack.mitre.org/techniques/T1059/001/"
+
+[rule.threat.tactic]
+id = "TA0002"
+name = "Execution"
+reference = "https://attack.mitre.org/tactics/TA0002/"
