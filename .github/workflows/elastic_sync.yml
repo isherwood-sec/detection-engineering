@@ -4,8 +4,9 @@ on:
   push:
     branches:
       - main
-    path:
-      '**.toml'
+    paths:
+      - '**.toml'
+      - 'detections\**'
   workflow_dispatch:
 
 jobs:
