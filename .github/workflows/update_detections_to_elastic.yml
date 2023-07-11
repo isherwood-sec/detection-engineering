@@ -24,3 +24,9 @@ jobs:
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
           done
+      
+      - name: Run script
+        env: 
+          changed_files: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          python /development/update_alert.py
