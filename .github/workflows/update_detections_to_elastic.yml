@@ -9,4 +9,4 @@ jobs:
     steps:
       - uses: lots0logs/gh-action-get-changed-files@2.2.2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_KEY }}
