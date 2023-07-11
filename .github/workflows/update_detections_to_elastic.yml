@@ -8,8 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
   uses: actions/checkout@v3
-  with:
-    fetch-depth: 0
-  - name: Get changes
-    run: git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
+  - id: files
+    uses: jitterbit/get-changed-files@v1
+  - run: |
+    for changed_file in ${{ steps.files.outputs.all }}; do
+      echo "Do something with this ${changed_file}."
+    done
         
