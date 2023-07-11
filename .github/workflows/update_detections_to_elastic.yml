@@ -29,4 +29,4 @@ jobs:
         env: 
           changed_files: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          python /development/update_alert.py
+          python development/update_alert.py
