@@ -9,7 +9,7 @@ headers = {
     'kbn-xsrf': 'true',
     'Authorization': 'ApiKey ' + api_key
 }
-changed_files = os.environ["changed_files"]
+changed_files = os.environ["CHANGED_FILES"]
 print(changed_files)
 data = ""
 for root, dirs, files in os.walk("detections/"):
