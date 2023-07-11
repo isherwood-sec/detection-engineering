@@ -4,6 +4,7 @@ on:
   push:
     path:
       - 'detections/**.toml'
+      - '!**.yml'
   workflow_dispatch:
 
 jobs:
