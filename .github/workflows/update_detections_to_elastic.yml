@@ -15,16 +15,16 @@ jobs:
             *.toml
 
       - name: Get changed files and write the outputs to a json file
-         id: changed-files-write-output-files-json
-         uses: ./
-         with:
-           json: true
-           write_output_files: true
+        id: changed-files-write-output-files-json
+        uses: ./
+        with:
+          json: true
+          write_output_files: true
 
       - name: Verify the contents of the .github/outputs/added_files.json file
         run: |
           cat .github/outputs/added_files.json
 
-       - name: check script accessibility
+      - name: check script accessibility
         run: |
           python development/update_alert.py
