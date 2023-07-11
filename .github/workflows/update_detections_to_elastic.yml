@@ -18,7 +18,7 @@ jobs:
             else
                 echo "changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | xargs)" >> $GITHUB_OUTPUT
             fi
-            print($GITHUB_OUTPUT)
+            echo $GITHUB_OUTPUT
       - name: List changed files
         run: |
             for file in ${{ steps.changed-files.outputs.changed_files }}; do
