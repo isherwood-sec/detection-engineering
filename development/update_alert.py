@@ -50,9 +50,9 @@ for root, dirs, files in os.walk("detections/"):
 
                 data += "  \"enabled\": true\n}"
             rule_id = alert['rule']['rule_id']
-            url = url + "?rule_id=" + rule_id
+            update_url = url + "?rule_id=" + rule_id
       
-            elastic_data = requests.put(url, headers=headers, data=data).json()
+            elastic_data = requests.put(update_url, headers=headers, data=data).json()
             print(elastic_data)
 
             if "404" in elastic_data:
