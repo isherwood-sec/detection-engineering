@@ -13,5 +13,6 @@ jobs:
         with:
           python-version: '3.11.4'
       - run: |
+          pip install requests
           python development/validation.py
           python development/mitre.py
