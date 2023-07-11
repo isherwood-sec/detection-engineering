@@ -2,7 +2,7 @@
 author = ["Anthony Isherwood"]
 description = "From looking at the sysmon_operational logs, we're triggering on powershell running through a bat file execution."
 from = "now-6m"
-name = "Example File"
+name = "New Alert"
 risk_score = 80
 severity = "medium"
 type = "query"
