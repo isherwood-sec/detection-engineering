@@ -1,11 +1,10 @@
 name: All Detections To Elastic
 
 on:
-  push:
   workflow_dispatch:
 
 jobs:
-  elastic-all-detections:
+  elastic-detections-all:
     runs-on: ubuntu-latest
     env:
       ELASTIC_KEY: ${{ secrets.ELASTIC_KEY }}
