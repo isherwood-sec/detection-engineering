@@ -10,10 +10,11 @@ headers = {
     'Authorization': 'ApiKey ' + api_key
 }
 changed_files = os.environ["changed_files"]
-
+print(changed_files)
 data = ""
 for root, dirs, files in os.walk("detections/"):
     for file in files:
+        print(file)
         if file in changed_files:
             data = "{\n"
             if file.endswith(".toml"):
@@ -45,7 +46,7 @@ for root, dirs, files in os.walk("detections/"):
                             data += "  " + "\"" + field + "\": " + str(alert['rule'][field]) + "," + "\n"
                         elif type(alert['rule'][field]) == dict:
                             data += "  " + "\"" + field + "\": " + str(alert['rule'][field]).replace("'","\"") + "," + "\n"
-                      
+
                 data += "  \"enabled\": true\n}"
             rule_id = alert['rule']['rule_id']
             url = url + "?rule_id=" + rule_id

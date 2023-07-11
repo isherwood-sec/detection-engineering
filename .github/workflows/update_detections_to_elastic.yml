@@ -11,7 +11,9 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
-
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11.4'
       # Example 1
       - name: Get changed files
         id: changed-files
@@ -28,5 +30,5 @@ jobs:
       - name: Run script
         env: 
           changed_files: ${{ steps.changed-files.outputs.all_changed_files }}
-        run: |
-          python development/update_alert.py
+        - run: pip install requests
+        - run: python development/update_alert.py
