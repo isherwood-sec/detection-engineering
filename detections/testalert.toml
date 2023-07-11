@@ -2,11 +2,11 @@
 author = ["Anthony Isherwood"]
 description = "This alert looks for zip files being sent over FTP."
 from = "now-6m"
-name = "TESTING ALERT SYNCING"
-risk_score = 50
+name = "Test Alert"
+risk_score = 75
 severity = "high"
 type = "query"
-rule_id = "00000000-0000-0000-0000-000000000150"
+rule_id = "00000000-0000-0000-0000-000000000050"
 query = '''
 event.dataset : zeek.ftp and event.action : STOR and zeek.ftp.arg : *.zip
 '''
