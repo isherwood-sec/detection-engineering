@@ -52,10 +52,10 @@ for root, dirs, files in os.walk("detections/"):
             rule_id = alert['rule']['rule_id']
             update_url = url + "?rule_id=" + rule_id
       
-            elastic_data = requests.put(update_url, headers=headers, data=data).json()
+            elastic_data = requests.put(update_url, headers=headers, data=data)
             print(elastic_data)
 
-            if "404" in elastic_data:
+            if "404" == elastic_data.status_code:
                 elastic_data = requests.post(url, headers=headers, data=data).json()
                 print(elastic_data)
 
