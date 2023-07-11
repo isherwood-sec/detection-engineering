@@ -30,6 +30,6 @@ jobs:
       - name: Run script
         env: 
           changed_files: ${{ steps.changed-files.outputs.all_changed_files }}
-        - run: |
+        run: |
           pip install requests
           python development/update_alert.py
