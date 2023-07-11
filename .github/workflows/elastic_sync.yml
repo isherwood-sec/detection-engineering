@@ -2,6 +2,8 @@ name: Updating Detections
 
 on:
   push:
+    branches:
+      - main
     path:
       '**.toml'
   workflow_dispatch:
