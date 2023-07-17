@@ -1,6 +1,7 @@
 import requests
 import tomllib
 import os
+import sys
 
 url = "https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json"
 headers = {
